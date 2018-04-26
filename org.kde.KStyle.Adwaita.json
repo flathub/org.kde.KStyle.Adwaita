@@ -15,7 +15,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/MartinBriza/adwaita-qt.git"
+                    "url": "https://github.com/MartinBriza/adwaita-qt.git",
+                    "commit": "30decc8a0be929bb0344e192140456552e32dd41"
                 }
             ]
         },

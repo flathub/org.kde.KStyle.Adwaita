@@ -14,9 +14,9 @@
             "config-opts": ["-DQT_PLUGINS_DIR=/usr/share/runtime/lib/plugins/Adwaita"],
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/MartinBriza/adwaita-qt.git",
-                    "commit": "30decc8a0be929bb0344e192140456552e32dd41"
+                    "type": "archive",
+                    "url": "https://github.com/FedoraQt/adwaita-qt/archive/1.0.90.tar.gz",
+                    "sha256": "4e821ae7409fbf6e7b64f47838a9d0bc47793e788138ce1fd9609065b6e81009"
                 }
             ]
         },

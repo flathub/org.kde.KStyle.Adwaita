@@ -1,0 +1,40 @@
+diff --git a/style/adwaita.h b/style/adwaita.h
+index b7c830a..09b970a 100644
+--- a/style/adwaita.h
++++ b/style/adwaita.h
+@@ -136,7 +136,7 @@ namespace Adwaita
+ 
+         // line editors
+         LineEdit_FrameWidth = 3,
+-        LineEdit_MarginHeight = 4,
++        LineEdit_MarginHeight = 2,
+         LineEdit_MarginWidth = 8,
+         LineEdit_MinHeight = 36,
+         LineEdit_MinWidth = 80,
+diff --git a/style/adwaitastyle.cpp b/style/adwaitastyle.cpp
+index aeeb8ae..2287e0e 100644
+--- a/style/adwaitastyle.cpp
++++ b/style/adwaitastyle.cpp
+@@ -392,7 +392,12 @@ void Style::polish(QWidget *widget)
+     } else if (widget->inherits("QTipLabel")) {
+         setTranslucentBackground(widget);
+     } else if (QLineEdit *lineEdit = qobject_cast<QLineEdit *>(widget)) {
+-        lineEdit->setTextMargins(Metrics::LineEdit_MarginWidth, Metrics::LineEdit_MarginHeight, Metrics::LineEdit_MarginWidth, Metrics::LineEdit_MarginHeight);
++        // Do not use additional margin if the QLineEdit is really small
++        const bool useMarginWidth = lineEdit->width() > lineEdit->fontMetrics().width("#####");
++        const bool useMarginHeight = lineEdit->height() > lineEdit->fontMetrics().height() + (2 * Metrics::LineEdit_MarginHeight);
++        const int marginHeight = useMarginHeight ? Metrics::LineEdit_MarginHeight : 0;
++        const int marginWidth = useMarginWidth ? Metrics::LineEdit_MarginWidth : 0;
++        lineEdit->setTextMargins(marginWidth, marginHeight, marginWidth, marginHeight);
+     } else if (QSpinBox *spinBox = qobject_cast<QSpinBox *>(widget)) {
+         if (!spinBox->isEnabled()) {
+             QPalette pal = spinBox->palette();
+@@ -4844,7 +4849,7 @@ bool Style::drawMenuBarItemControl(const QStyleOption *option, QPainter *painter
+     QRect textRect = option->fontMetrics.boundingRect(rect, textFlags, menuItemOption->text);
+ 
+     // render text
+-    const QPalette::ColorRole role = (useStrongFocus && sunken) ? QPalette::Highlight : QPalette::WindowText;
++    const QPalette::ColorRole role = (useStrongFocus && sunken) ? QPalette::Link : QPalette::WindowText;
+     drawItemText(painter, textRect, textFlags, palette, enabled, menuItemOption->text, role);
+ 
+     return true;

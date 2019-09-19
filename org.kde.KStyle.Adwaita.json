@@ -1,16 +1,16 @@
 {
   "id": "org.kde.KStyle.Adwaita",
-  "branch": "5.12",
+  "branch": "5.13",
   "runtime": "org.kde.Platform",
   "build-extension": true,
   "sdk": "org.kde.Sdk",
-  "runtime-version": "5.12",
+  "runtime-version": "5.13",
   "appstream-compose": false,
   "separate-locales": false,
   "modules": [
         {
             "name": "adwaita-qt",
-            "cmake": true,
+            "buildsystem": "cmake",
             "config-opts": ["-DQT_PLUGINS_DIR=/usr/share/runtime/lib/plugins/Adwaita"],
             "sources": [
                 {

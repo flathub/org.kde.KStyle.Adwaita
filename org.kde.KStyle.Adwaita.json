@@ -1,10 +1,10 @@
 {
   "id": "org.kde.KStyle.Adwaita",
-  "branch": "5.15",
+  "branch": "5.14",
   "runtime": "org.kde.Platform",
   "build-extension": true,
   "sdk": "org.kde.Sdk",
-  "runtime-version": "5.15",
+  "runtime-version": "5.14",
   "appstream-compose": false,
   "separate-locales": false,
   "modules": [
@@ -14,9 +14,9 @@
             "config-opts": ["-DQT_PLUGINS_DIR=/usr/share/runtime/lib/plugins/Adwaita"],
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/FedoraQt/adwaita-qt.git",
-                    "branch": "e5dfd0be75b31dc3b823de0c4bd320b9a6995b89"
+                    "type": "archive",
+                    "url": "https://github.com/FedoraQt/adwaita-qt/archive/1.1.90.tar.gz",
+                    "sha256": "6348fad757557cf3c595ecead6fd8235d59bca63f1f4ace5d7b6d3777d77b682"
                 }
             ]
         },

@@ -1,39 +1,39 @@
 {
-  "id": "org.kde.KStyle.Adwaita",
-  "branch": "5.12",
-  "runtime": "org.kde.Platform",
-  "build-extension": true,
-  "sdk": "org.kde.Sdk",
-  "runtime-version": "5.12",
-  "appstream-compose": false,
-  "separate-locales": false,
-  "modules": [
-        {
-            "name": "adwaita-qt",
-            "cmake": true,
-            "config-opts": ["-DQT_PLUGINS_DIR=/usr/share/runtime/lib/plugins/Adwaita"],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/FedoraQt/adwaita-qt/archive/1.1.90.tar.gz",
-                    "sha256": "6348fad757557cf3c595ecead6fd8235d59bca63f1f4ace5d7b6d3777d77b682"
-                }
-            ]
-        },
-        {
-            "name": "appdata",
-            "buildsystem": "simple",
-            "build-commands": [
-                "mkdir -p ${FLATPAK_DEST}/share/appdata",
-                "cp org.kde.KStyle.Adwaita.appdata.xml ${FLATPAK_DEST}/share/appdata",
-                "appstream-compose --basename=org.kde.KStyle.Adwaita --prefix=${FLATPAK_DEST} --origin=flatpak org.kde.KStyle.Adwaita"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "path": "org.kde.KStyle.Adwaita.appdata.xml"
-                }
-            ]
-        }
-    ]
+    "id": "org.kde.KStyle.Adwaita",
+    "branch": "5.12",
+    "runtime": "org.kde.Platform",
+    "build-extension": true,
+    "sdk": "org.kde.Sdk",
+    "runtime-version": "5.12",
+    "appstream-compose": false,
+    "separate-locales": false,
+    "modules": [
+            {
+                "name": "adwaita-qt",
+                "cmake": true,
+                "config-opts": ["-DQT_PLUGINS_DIR=/usr/share/runtime/lib/plugins/Adwaita", "-DCMAKE_INSTALL_PREFIX=/usr/share/runtime/lib/plugins/Adwaita"],
+                "sources": [
+                    {
+                        "type": "archive",
+                        "url": "https://github.com/FedoraQt/adwaita-qt/archive/1.1.90.tar.gz",
+                        "sha256": "6348fad757557cf3c595ecead6fd8235d59bca63f1f4ace5d7b6d3777d77b682"
+                    }
+                ]
+            },
+            {
+                "name": "appdata",
+                "buildsystem": "simple",
+                "build-commands": [
+                    "mkdir -p ${FLATPAK_DEST}/share/appdata",
+                    "cp org.kde.KStyle.Adwaita.appdata.xml ${FLATPAK_DEST}/share/appdata",
+                    "appstream-compose --basename=org.kde.KStyle.Adwaita --prefix=${FLATPAK_DEST} --origin=flatpak org.kde.KStyle.Adwaita"
+                ],
+                "sources": [
+                    {
+                        "type": "file",
+                        "path": "org.kde.KStyle.Adwaita.appdata.xml"
+                    }
+                ]
+            }
+        ]
 }

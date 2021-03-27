@@ -15,8 +15,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://github.com/FedoraQt/adwaita-qt/archive/1.2.0.tar.gz",
-                        "sha256": "5698025e1fe3479397516e504c20943611afe040c89dca6531c309fd4198cc6b"
+                        "url": "https://github.com/FedoraQt/adwaita-qt/archive/1.2.1.tar.gz",
+                        "sha256": "0673586fe37469eb826be821b3f2c12f055e99a6ca0a8377cfa06b123543ae56"
                     }
                 ]
             },

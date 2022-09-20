@@ -17,7 +17,7 @@
                     {
                         "type": "git",
                         "url": "https://github.com/FedoraQt/adwaita-qt.git",
-                        "commit": "ace15cd8b8d891ca96d35cbf5b6ecdb6731bf6b9"
+                        "branch": "1.4.2"
                     }
                 ]
             },

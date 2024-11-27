@@ -5,7 +5,6 @@
     "build-extension": true,
     "sdk": "org.kde.Sdk",
     "runtime-version": "5.15-24.08",
-    "appstream-compose": false,
     "separate-locales": false,
     "modules": [
         {
@@ -24,14 +23,12 @@
             "name": "appdata",
             "buildsystem": "simple",
             "build-commands": [
-                "mkdir -p ${FLATPAK_DEST}/share/appdata",
-                "cp org.kde.KStyle.Adwaita.appdata.xml ${FLATPAK_DEST}/share/appdata",
-                "appstream-compose --basename=org.kde.KStyle.Adwaita --prefix=${FLATPAK_DEST} --origin=flatpak org.kde.KStyle.Adwaita"
+                "install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "path": "org.kde.KStyle.Adwaita.appdata.xml"
+                    "path": "org.kde.KStyle.Adwaita.metainfo.xml"
                 }
             ]
         }

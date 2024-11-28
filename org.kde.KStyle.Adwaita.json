@@ -9,8 +9,11 @@
     "modules": [
         {
             "name": "adwaita-qt",
-            "cmake": true,
-            "config-opts": ["-DQT_PLUGINS_DIR=/usr/share/runtime/lib/plugins/Adwaita", "-DCMAKE_INSTALL_PREFIX=/usr/share/runtime/lib/plugins/Adwaita"],
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DQT_PLUGINS_DIR=/usr/share/runtime/lib/plugins/Adwaita",
+                "-DCMAKE_INSTALL_PREFIX=/usr/share/runtime/lib/plugins/Adwaita"
+            ],
             "sources": [
                 {
                     "type": "git",
